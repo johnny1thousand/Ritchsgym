@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- Ritch's Gym homepage, build 5 (hamburger menu, 2x2 phone stats) -->
+<!-- Ritch's Gym homepage, build 6 (header stays on one row on phones) -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ritch's Gym | Wendell NC</title>
 <meta name="description" content="Ritch's Gym in Wendell, NC. A 24 hour gym with keyless entry, rotation classes, personal training, reformer Pilates, jiu jitsu and a barber shop.">
@@ -79,12 +79,18 @@ a{color:#F4F5F7}a:hover{color:#FFFFFF}
 .rg-links.rg-open a:last-child{border-bottom:0}
 .rg-links .rg-nav::after{display:none}
 .rg-navbar{gap:12px !important;flex-wrap:wrap}
-.rg-logo{height:60px !important}
+.rg-logo{width:86px !important;height:auto !important}
+.rg-navbar>*{flex:0 0 auto}
+.rg-navbar{justify-content:space-between !important}
 }
 @media (prefers-reduced-motion: reduce){.rg-bars span{transition:none}}
 @media (max-width: 600px){
 .rg-stat{flex:1 1 40% !important;min-width:0}
 .rg-stat-num{font-size:54px !important}
+}
+@media (max-width: 370px){
+.rg-logo{width:70px !important}
+.rg-cta{padding:0 12px !important;font-size:15px !important}
 }
 </style>
 </head>
@@ -110,7 +116,7 @@ a{color:#F4F5F7}a:hover{color:#FFFFFF}
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,12,14,0.9) 0%, rgba(11,12,14,0.68) 55%, rgba(11,12,14,0.45) 100%)"></div>
 <header style="position: relative; padding: 18px clamp(20px, 5vw, 100px)">
 <nav class="rg-navbar" aria-label="Main" style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px">
-<a href="https://ritchsgym.com/" style="display: inline-flex; text-decoration: none"><img src="images/ritchs-gym-logo.png" class="rg-logo" alt="Ritch's Gym" style="height: 76px; width: auto; display: block"></a>
+<a href="https://ritchsgym.com/" style="display: block; flex: 0 0 auto; text-decoration: none"><img src="images/ritchs-gym-logo.png" class="rg-logo" alt="Ritch's Gym" width="200" height="140" style="width: 109px; height: auto; flex: 0 0 auto; display: block"></a>
 <div id="rg-links" class="rg-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-weight: 500; font-size: 16px">
 <a class="rg-nav" href="#offer" style="text-decoration: none; padding: 12px 0">Classes</a>
 <a class="rg-nav" href="https://ritchsgym.com/training/" style="text-decoration: none; padding: 12px 0">Personal Training</a>
@@ -120,7 +126,7 @@ a{color:#F4F5F7}a:hover{color:#FFFFFF}
 <a class="rg-nav" href="#visit" style="text-decoration: none; padding: 12px 0">Contact</a>
 </div>
 <div style="display: flex; align-items: center; gap: 10px">
-<a class="rg-btn rg-shine" href="https://app.clubready.com/JoinUs/7138/656537" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; background: var(--accent, #3C879A); color: #0B0C0E; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 4px">Get a day pass</a>
+<a class="rg-btn rg-shine rg-cta" href="https://app.clubready.com/JoinUs/7138/656537" style="display: inline-flex; align-items: center; white-space: nowrap; min-height: 46px; padding: 0 22px; background: var(--accent, #3C879A); color: #0B0C0E; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 4px">Get a day pass</a>
 <button id="rg-burger" class="rg-burger" type="button" aria-label="Menu" aria-controls="rg-links" aria-expanded="false" style="width: 46px; height: 46px; padding: 0; align-items: center; justify-content: center; background: transparent; color: #F4F5F7; border: 1px solid #F4F5F7; border-radius: 4px; cursor: pointer">
 <span class="rg-bars" aria-hidden="true"><span></span><span></span><span></span></span>
 </button>
@@ -410,7 +416,7 @@ metajiujitsuacademy@gmail.com</a>
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 40px 56px">
 <div style="flex: 1.4 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
-<img src="images/ritchs-gym-logo.png" alt="Ritch's Gym" style="height: 96px; width: auto; display: block">
+<img src="images/ritchs-gym-logo.png" alt="Ritch's Gym" width="200" height="140" style="width: 137px; height: auto; display: block">
 <h2 class="rg-reveal" style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(44px, 6vw, 72px); line-height: 0.92; text-transform: uppercase">Come see <span style="color: var(--accent, #3C879A)">us</span></h2>
 <p style="margin: 0; max-width: 380px; color: #C9CED6">Questions or concerns? Don't hesitate to ask. Stop by during office hours, call, or send Josh an email.</p>
 </div>
