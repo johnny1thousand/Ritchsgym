@@ -32,9 +32,9 @@
 <video autoplay muted loop playsinline preload="metadata" poster="images/hero-rower.jpg" aria-label="Background video of members training at Ritch's Gym" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% center"><source src="video/hero.mp4" type="video/mp4"></video>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,12,14,0.9) 0%, rgba(11,12,14,0.68) 55%, rgba(11,12,14,0.45) 100%)"></div>
 <header style="position: relative; padding: 18px clamp(20px, 5vw, 100px)">
-<nav aria-label="Main" style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px">
-<a href="https://ritchsgym.com/" style="display: inline-flex; text-decoration: none"><img src="images/ritchs-gym-logo.png" alt="Ritch's Gym" style="height: 76px; width: auto; display: block"></a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-weight: 500; font-size: 16px">
+<nav class="rg-navbar" aria-label="Main" style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px">
+<a href="https://ritchsgym.com/" style="display: inline-flex; text-decoration: none"><img src="images/ritchs-gym-logo.png" class="rg-logo" alt="Ritch's Gym" style="height: 76px; width: auto; display: block"></a>
+<div id="rg-links" class="rg-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-weight: 500; font-size: 16px">
 <a class="rg-nav" href="#offer" style="text-decoration: none; padding: 12px 0">Classes</a>
 <a class="rg-nav" href="https://ritchsgym.com/training/" style="text-decoration: none; padding: 12px 0">Personal Training</a>
 <a class="rg-nav" href="#jiujitsu" style="text-decoration: none; padding: 12px 0">Jiu Jitsu</a>
@@ -42,14 +42,19 @@
 <a class="rg-nav" href="#pricing" style="text-decoration: none; padding: 12px 0">Pricing</a>
 <a class="rg-nav" href="#visit" style="text-decoration: none; padding: 12px 0">Contact</a>
 </div>
+<div style="display: flex; align-items: center; gap: 10px">
 <a class="rg-btn rg-shine" href="https://app.clubready.com/JoinUs/7138/656537" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; background: var(--accent, #3C879A); color: #0B0C0E; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 4px">Get a day pass</a>
+<button id="rg-burger" class="rg-burger" type="button" aria-label="Menu" aria-controls="rg-links" aria-expanded="false" style="width: 46px; height: 46px; padding: 0; align-items: center; justify-content: center; background: transparent; color: #F4F5F7; border: 1px solid #F4F5F7; border-radius: 4px; cursor: pointer">
+<span class="rg-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+</button>
+</div>
 </nav>
 </header>
 
 <section style="position: relative; padding: clamp(56px, 9vw, 150px) clamp(20px, 5vw, 100px) clamp(40px, 5vw, 72px)">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: stretch; justify-content: space-between; gap: clamp(28px, 4vw, 56px)">
 <div style="flex: 0 1 660px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px">
-<div class="rg-rise rg-d1" style="font-size: 14px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF">Wendell, North Carolina</div>
+<div class="rg-rise rg-d1" style="font-size: 14px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF">Ritch's Gym, Wendell, North Carolina</div>
 <h1 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(64px, 9vw, 132px); line-height: 0.88; text-transform: uppercase; letter-spacing: -0.01em"><span class="rg-rise rg-d2" style="display: block">Every body.</span><span class="rg-rise rg-d3" style="display: block">Every <span class="rg-bar" style="color: var(--accent, #3C879A)">hour.</span></span></h1>
 <p class="rg-rise rg-d4" style="margin: 0; max-width: 540px; font-size: 24px; font-weight: 500; color: #E9EBEF">A gym where everybody knows your name.</p>
 <div class="rg-rise rg-d5" style="display: flex; flex-wrap: wrap; gap: 14px">
@@ -165,24 +170,24 @@
 
 <section id="rg-stats" style="background: var(--accent, #3C879A); padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 100px)">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 24px">
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="rg-stat" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
 <svg class="rg-ico" aria-hidden="true" width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="display: block; overflow: visible; margin-bottom: 10px"><path class="rg-i-heart" d="M24 41C10 31 5 23 5 16a9.5 9.5 0 0 1 19-4 9.5 9.5 0 0 1 19 4c0 7-5 15-19 25z"></path></svg>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="15" data-suffix="+">15+</span></div>
+<div class="rg-stat-num" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="15" data-suffix="+">15+</span></div>
 <div style="color: #0B0C0E; font-weight: 500">Cardio machines</div>
 </div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="rg-stat" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
 <svg class="rg-ico" aria-hidden="true" width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="display: block; overflow: visible; margin-bottom: 10px"><g class="rg-i-arm"><path d="M5 42V30C9 22 19 20 25 27L28 14C28 8 30 5 34 5H39C43 5 43 12 39 12H38L41 30C42 38 36 42 28 42Z"></path><path class="rg-i-muscle" d="M10 32C13 27 19 27 22 31"></path></g></svg>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="30" data-suffix="+">30+</span></div>
+<div class="rg-stat-num" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="30" data-suffix="+">30+</span></div>
 <div style="color: #0B0C0E; font-weight: 500">Strength machines</div>
 </div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="rg-stat" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
 <svg class="rg-ico" aria-hidden="true" width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="display: block; overflow: visible; margin-bottom: 10px"><g class="rg-i-bell"><path d="M14 24H34"></path><rect x="8" y="14" width="6" height="20" rx="2"></rect><rect x="34" y="14" width="6" height="20" rx="2"></rect><rect x="3" y="18" width="5" height="12" rx="2"></rect><rect x="40" y="18" width="5" height="12" rx="2"></rect></g></svg>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="8000" data-suffix="">8,000</span></div>
+<div class="rg-stat-num" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="8000" data-suffix="">8,000</span></div>
 <div style="color: #0B0C0E; font-weight: 500">Sq ft of weight training area</div>
 </div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
+<div class="rg-stat" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
 <svg class="rg-ico" aria-hidden="true" width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="display: block; overflow: visible; margin-bottom: 10px"><rect x="4" y="14" width="40" height="9" rx="2"></rect><rect x="19.5" y="12" width="9" height="13" rx="2"></rect><path class="rg-i-tail-a" d="M21 25L14 42H21L24 30"></path><path class="rg-i-tail-b" d="M27 25L34 42H27L24 30"></path></svg>
-<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="2000" data-suffix="">2,000</span></div>
+<div class="rg-stat-num" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 72px; line-height: 1; color: #FFFFFF"><span data-count="2000" data-suffix="">2,000</span></div>
 <div style="color: #0B0C0E; font-weight: 500">Sq ft of jiu jitsu and Muay Thai training</div>
 </div>
 </div>
@@ -203,7 +208,7 @@
 <p style="margin: 0; color: #C9CED6">BJJ at Ritch's has a new name. Meta Jiu Jitsu Academy trains on our dedicated mat space, with room for kids and adults to learn, drill and roll.</p>
 <p style="margin: 0; color: #C9CED6">For class times and how to get started, reach out to Justin Hale.</p>
 <div>
-<a class="rg-btn" href="mailto:metajiujitsuacademy@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border: 1px solid #4A515C; color: #F4F5F7; text-decoration: none; font-weight: 600; border-radius: 4px; overflow-wrap: anywhere">
+<a class="rg-btn" href="mailto:metajiujitsuacademy@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border: 1px solid #4A515C; color: #F4F5F7; text-decoration: none; font-weight: 600; font-size: clamp(14px, 3.7vw, 17px); border-radius: 4px; overflow-wrap: anywhere">
 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
 metajiujitsuacademy@gmail.com</a>
 </div>

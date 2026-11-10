@@ -25,3 +25,16 @@
   }, { threshold: 0.4 });
   io.observe(el);
 })();
+
+(function () {
+  var btn = document.getElementById('rg-burger');
+  var links = document.getElementById('rg-links');
+  if (!btn || !links) return;
+  function set(open) {
+    btn.classList.toggle('rg-open', open);
+    links.classList.toggle('rg-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function () { set(!btn.classList.contains('rg-open')); });
+  links.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+})();
