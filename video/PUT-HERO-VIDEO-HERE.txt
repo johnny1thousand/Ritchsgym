@@ -1,0 +1,2 @@
+Save the header background video in this folder as hero.mp4
+Until it is here, the header shows images/hero-rower.jpg instead.
