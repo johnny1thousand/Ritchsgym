@@ -2,9 +2,7 @@ Ritch's Gym homepage
 
 Upload everything in this folder to the web root of the domain, keeping the folder structure:
 
-  index.html      the page
-  css/style.css   animations and base styles
-  js/main.js      the count-up on the stats band
+  index.html      the page (styles and scripts are inside this one file)
   images/         all photos and the logo
   video/          add the header video here as hero.mp4
 

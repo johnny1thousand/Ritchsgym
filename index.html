@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Ritch's Gym homepage, build 5 (hamburger menu, 2x2 phone stats) -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ritch's Gym | Wendell NC</title>
 <meta name="description" content="Ritch's Gym in Wendell, NC. A 24 hour gym with keyless entry, rotation classes, personal training, reformer Pilates, jiu jitsu and a barber shop.">
@@ -9,7 +10,83 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B0C0E}
+a{color:#F4F5F7}a:hover{color:#FFFFFF}
+.rg-btn{transition:transform .18s cubic-bezier(.2,1.5,.4,1), filter .15s ease}
+.rg-btn svg{transition:transform .2s ease}
+.rg-btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.rg-btn:hover svg{transform:translateX(5px)}
+.rg-btn:active{transform:translateY(1px) scale(.96)}
+.rg-shine{position:relative;overflow:hidden}
+.rg-shine::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));transform:skewX(-20deg);pointer-events:none}
+.rg-shine:hover::after{left:130%;transition:left .65s ease}
+.rg-nav{position:relative}
+.rg-nav::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--accent,#3C879A);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.rg-nav:hover::after{transform:scaleX(1)}
+.rg-card img{transition:transform .6s ease}
+.rg-card:hover img{transform:scale(1.05)}
+.rg-card h3{transition:transform .3s cubic-bezier(.2,1.5,.4,1)}
+.rg-card:hover h3{transform:translateY(-4px)}
+.rg-plate{transition:transform .22s cubic-bezier(.2,1.5,.4,1), box-shadow .22s ease}
+.rg-plate:hover{transform:translateY(-8px);box-shadow:0 8px 0 var(--accent,#3C879A)}
+.rg-bar{position:relative;display:inline-block}
+.rg-bar::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.07em;background:var(--accent,#3C879A);transform:scaleX(1);transform-origin:left}
+@keyframes rg-rise{0%{opacity:0;transform:translateY(40px)}65%{opacity:1;transform:translateY(-6px)}100%{opacity:1;transform:none}}
+@keyframes rg-load{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rg-beat{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(60,135,154,.7)}12%{transform:scale(1.35)}24%{transform:scale(1)}36%{transform:scale(1.2)}48%{transform:scale(1)}70%{box-shadow:0 0 0 10px rgba(60,135,154,0)}}
+@keyframes rg-lift{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+.rg-rise{animation:rg-rise .7s cubic-bezier(.2,.8,.3,1) both}
+.rg-d1{animation-delay:.05s}.rg-d2{animation-delay:.18s}.rg-d3{animation-delay:.32s}.rg-d4{animation-delay:.5s}.rg-d5{animation-delay:.64s}.rg-d6{animation-delay:.78s}
+.rg-bar::after{animation:rg-load .6s 1s cubic-bezier(.6,0,.2,1) both}
+.rg-pulse{animation:rg-beat 1.6s ease-out infinite}
+@supports (animation-timeline: view()){
+.rg-reveal,.rg-card:not(.rg-btn){animation:rg-lift linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+}
+}
+@media (prefers-reduced-motion: reduce){.rg-card img,.rg-card h3,.rg-btn,.rg-btn svg,.rg-plate,.rg-nav::after{transition:none}.rg-shine::after{display:none}}
+.rg-ico *{transform-box:fill-box;transform-origin:center}
+.rg-ico .rg-i-arm{transform-origin:10% 90%}
+.rg-ico .rg-i-muscle{transform-origin:50% 100%}
+.rg-ico .rg-i-tail-a,.rg-ico .rg-i-tail-b{transform-origin:50% 0%}
+@keyframes rg-i-heart{0%,100%{transform:scale(1)}12%{transform:scale(1.18)}24%{transform:scale(1)}36%{transform:scale(1.1)}48%{transform:scale(1)}}
+@keyframes rg-i-arm{0%,100%{transform:rotate(0deg)}45%,65%{transform:rotate(-7deg)}}
+@keyframes rg-i-muscle{0%,100%{transform:scaleY(1)}45%,65%{transform:scaleY(1.9)}}
+@keyframes rg-i-bell{0%,100%{transform:translateY(5px) rotate(0deg)}50%{transform:translateY(-6px) rotate(-8deg)}}
+@keyframes rg-i-sway{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-7deg)}}
+@media (prefers-reduced-motion: no-preference){
+.rg-i-heart{animation:rg-i-heart 1.3s ease-out infinite}
+.rg-i-arm{animation:rg-i-arm 1.8s ease-in-out infinite}
+.rg-i-muscle{animation:rg-i-muscle 1.8s ease-in-out infinite}
+.rg-i-bell{animation:rg-i-bell 1.6s ease-in-out infinite}
+.rg-i-tail-a{animation:rg-i-sway 2.2s ease-in-out infinite}
+.rg-i-tail-b{animation:rg-i-sway 2.2s ease-in-out infinite reverse}
+}
+.rg-burger{display:none}
+.rg-bars{position:relative;display:block;width:22px;height:16px}
+.rg-bars span{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transition:transform .25s ease, opacity .2s ease, top .25s ease}
+.rg-bars span:nth-child(1){top:0}.rg-bars span:nth-child(2){top:7px}.rg-bars span:nth-child(3){top:14px}
+.rg-burger.rg-open .rg-bars span:nth-child(1){top:7px;transform:rotate(45deg)}
+.rg-burger.rg-open .rg-bars span:nth-child(2){opacity:0}
+.rg-burger.rg-open .rg-bars span:nth-child(3){top:7px;transform:rotate(-45deg)}
+@media (max-width: 900px){
+.rg-burger{display:inline-flex}
+.rg-links{display:none !important}
+.rg-links.rg-open{display:flex !important;flex-direction:column !important;flex-wrap:nowrap !important;align-items:stretch !important;gap:0 !important;order:10;flex:1 0 100%;box-sizing:border-box;background:rgba(11,12,14,.95);border:1px solid #262A31;border-radius:6px;padding:6px 20px}
+.rg-links.rg-open a{padding:15px 0 !important;font-size:18px;border-bottom:1px solid #262A31}
+.rg-links.rg-open a:last-child{border-bottom:0}
+.rg-links .rg-nav::after{display:none}
+.rg-navbar{gap:12px !important;flex-wrap:wrap}
+.rg-logo{height:60px !important}
+}
+@media (prefers-reduced-motion: reduce){.rg-bars span{transition:none}}
+@media (max-width: 600px){
+.rg-stat{flex:1 1 40% !important;min-width:0}
+.rg-stat-num{font-size:54px !important}
+}
+</style>
 </head>
 <body>
 <div style="--accent: #3C879A; background: #0B0C0E; color: #F4F5F7; font-family: Barlow, system-ui, sans-serif; font-size: 17px; line-height: 1.55; overflow-x: hidden">
@@ -365,6 +442,47 @@ metajiujitsuacademy@gmail.com</a>
 </footer>
 
 </div>
-<script src="js/main.js"></script>
+<script>
+(function () {
+  var el = document.getElementById('rg-stats');
+  if (!el || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nums = [].slice.call(el.querySelectorAll('[data-count]'));
+  function show(t) {
+    nums.forEach(function (n) {
+      n.textContent = Math.round(+n.getAttribute('data-count') * t).toLocaleString('en-US') + n.getAttribute('data-suffix');
+    });
+  }
+  var first = true;
+  var io = new IntersectionObserver(function (entries) {
+    var seen = entries[0].isIntersecting;
+    if (first) { first = false; if (!seen) show(0); return; }
+    if (!seen) return;
+    io.disconnect();
+    var start = null;
+    function step(now) {
+      if (start === null) start = now;
+      var k = Math.min(1, (now - start) / 1500);
+      show(1 - Math.pow(1 - k, 3));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }, { threshold: 0.4 });
+  io.observe(el);
+})();
+
+(function () {
+  var btn = document.getElementById('rg-burger');
+  var links = document.getElementById('rg-links');
+  if (!btn || !links) return;
+  function set(open) {
+    btn.classList.toggle('rg-open', open);
+    links.classList.toggle('rg-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function () { set(!btn.classList.contains('rg-open')); });
+  links.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+})();
+</script>
 </body>
 </html>
